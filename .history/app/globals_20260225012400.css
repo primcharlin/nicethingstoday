@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+:root {
+    /* Warm, cozy base palette – closer to the mock */
+    --background: #fae162; /* soft but bright yellow */
+    --foreground: #1f2937; /* slate-800 */
+    --card: #ffffff; /* crisp white cards */
+    --accent: #a855f7; /* playful purple */
+    --accent-soft: #f5e1ff; /* soft purple tint */
+}
+
+@theme inline {
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-card: var(--card);
+    --color-accent: var(--accent);
+    --color-accent-soft: var(--accent-soft);
+    --font-sans: var(--font-geist-sans);
+    --font-mono: var(--font-geist-mono);
+}
+
+body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family:
+        var(--font-geist-sans),
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+}
+
+button {
+    font-family: inherit;
+}
+
+input {
+    font-family: inherit;
+}
