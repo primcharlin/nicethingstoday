@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+:root {
+    /* Warm, cozy base palette – closer to the mock */
+    --background: #fae162; /* soft but bright yellow */
+    --foreground: #1f2937; /* slate-800 */
+    --card: #ffffff; /* crisp white cards */
+    --accent: #a855f7; /* playful purple */
+    --accent-soft: #f5e1ff; /* soft purple tint */
+    --heading-primary: #51af73; /* Beau heading green */
+}
+
+@theme inline {
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-card: var(--card);
+    --color-accent: var(--accent);
+    --color-accent-soft: var(--accent-soft);
+    --font-sans: var(--font-inter);
+}
+
+body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family:
+        var(--font-inter),
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+}
+
+button {
+    font-family: inherit;
+}
+
+input {
+    font-family: inherit;
+}
+
+.heading-primary {
+    color: var(--heading-primary);
+}
+
+/* Centralized full-screen frame styling */
+.frame {
+    min-height: 100vh;
+    background: var(--background);
+    color: var(--foreground);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Centralized logo sizing */
+.logo {
+    width: 10rem;
+    height: 10rem;
+    flex-shrink: 0;
+}
+
+/* Centralized layout container sizing/padding */
+.content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    /* Tailwind equivalents:
+       max-w-xs (20rem), px-4 (1rem), py-6 (1.5rem) */
+    max-width: 20rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+@media (min-width: 640px) {
+    .content {
+        /* sm:max-w-sm (24rem) */
+        max-width: 24rem;
+        align-items: center;
+    }
+}
+
+@media (min-width: 768px) {
+    .content {
+        /* md:max-w-2xl (42rem) */
+        max-width: 42rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .content {
+        /* lg:max-w-4xl (56rem) */
+        max-width: 56rem;
+    }
+}
