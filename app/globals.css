@@ -43,6 +43,23 @@ input {
     color: var(--heading-primary);
 }
 
+/* Centralized full-screen frame styling */
+.frame {
+    min-height: 100vh;
+    background: var(--background);
+    color: var(--foreground);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Centralized logo sizing */
+.logo {
+    width: 10rem;
+    height: 10rem;
+    flex-shrink: 0;
+}
+
 /* Centralized layout container sizing/padding */
 .content {
     position: relative;
@@ -63,6 +80,7 @@ input {
     .content {
         /* sm:max-w-sm (24rem) */
         max-width: 24rem;
+        align-items: center;
     }
 }
 

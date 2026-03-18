@@ -7,13 +7,18 @@ type LayoutProps = {
 
 export function Layout({ children }: LayoutProps) {
     return (
-        <div className='min-h-screen bg-background text-foreground flex items-center justify-center'>
+        <div className='frame'>
             <div className='content'>
                 <div className='absolute left-4 top-4 flex items-center gap-2 text-[10px] text-foreground/70'>
                     <Link
                         href='/'
-                        className='font-semibold tracking-wide'>
-                        NiceThingsToday
+                        aria-label='NiceThingsToday home'
+                        className='flex items-center'>
+                        <img
+                            src='/img/nicethings-logo-01.png'
+                            alt='NiceThingsToday logo'
+                            className='logo'
+                        />
                     </Link>
                     <span className='hidden sm:inline'>
                         · small, cozy moments
