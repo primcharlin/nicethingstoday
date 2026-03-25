@@ -185,29 +185,19 @@ input {
     flex-direction: column;
     min-height: 0;
     font-weight: 400;
-    position: relative;
-    z-index: 1;
-    border-radius: 34px;
 }
 
-.time-page::before {
-    content: "";
-    position: absolute;
-    inset: -0.25dvh;
-    border-radius: 34px;
-    background:
-        radial-gradient(
-            80% 140% at 10% 0%,
-            rgba(168, 85, 247, 0.18),
-            rgba(255, 255, 255, 0.2) 55%,
-            rgba(255, 255, 255, 0.12)
-        );
-    border: 1px solid rgba(31, 41, 55, 0.12);
-    box-shadow:
-        0 18px 45px rgba(0, 0, 0, 0.06),
-        inset 0 1px 0 rgba(255, 255, 255, 0.6);
-    z-index: -1;
-    pointer-events: none;
+/* Home main column: same as flex min-h-0 flex-1 flex-col gap-3, no background */
+.time-page-main {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    flex: 1 1 0%;
+    gap: 0.75rem; /* gap-3 */
+    background: none;
+    background-color: transparent;
+    background-image: none;
+    box-shadow: none;
 }
 
 @media (min-width: 640px) {
@@ -315,6 +305,33 @@ input {
     z-index: 10;
 }
 
+/* Year overlay card (OverlayCard.tsx) */
+.day-card {
+    position: fixed;
+    z-index: 50;
+    max-width: 20rem; /* max-w-xs */
+    border-radius: 26px; /* rounded-[26px] */
+    background: #10b981; /* bg-emerald-500 */
+    padding-left: 1rem; /* px-4 */
+    padding-right: 1rem; /* px-4 */
+    padding-top: 0.75rem; /* py-3 */
+    padding-bottom: 0.75rem; /* py-3 */
+    box-shadow:
+        0 10px 15px -3px rgba(0, 0, 0, 0.3),
+        0 4px 6px -4px rgba(0, 0, 0, 0.3); /* shadow-lg shadow-black/30 */
+    outline: none; /* outline-none */
+}
+
+@media (min-width: 640px) {
+    .day-card {
+        max-width: 24rem; /* sm:max-w-sm */
+        padding-left: 1.25rem; /* sm:px-5 */
+        padding-right: 1.25rem; /* sm:px-5 */
+        padding-top: 1rem; /* sm:py-4 */
+        padding-bottom: 1rem; /* sm:py-4 */
+    }
+}
+
 /* Centralized layout container sizing/padding */
 .content {
     position: relative;
@@ -340,6 +357,8 @@ input {
     flex: 0 0 auto;
     min-height: 0;
     overflow: hidden;
+    background: none;
+    background-color: transparent;
 }
 
 @media (min-width: 640px) {

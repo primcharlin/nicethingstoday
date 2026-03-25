@@ -118,7 +118,7 @@ export default function YearPage() {
                                     key={moment}
                                     className='flex items-center justify-between gap-2'>
                                     <span className='text-sm'>☺︎</span>
-                                    <span className='flex-1 text-right font-medium'>
+                                    <span className='flex-1 text-left font-medium'>
                                         {moment}
                                     </span>
                                 </li>

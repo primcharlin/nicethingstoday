@@ -132,7 +132,7 @@ export default function HomePage() {
                     </h1>
                 </header>
 
-                <div className='flex min-h-0 flex-1 flex-col gap-3'>
+                <div className='time-page-main'>
                     <div className='flex flex-wrap justify-between gap-2'>
                         {chips.map((chip) => (
                             <Chip

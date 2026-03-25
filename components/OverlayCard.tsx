@@ -70,7 +70,7 @@ export function OverlayCard({
       <div
         ref={cardRef}
         tabIndex={-1}
-        className="fixed z-50 max-w-xs sm:max-w-sm rounded-[26px] bg-emerald-500 px-4 py-3 sm:px-5 sm:py-4 shadow-lg shadow-black/30 outline-none"
+        className="day-card"
         style={cardStyle}
         role="dialog"
         aria-modal="true"
