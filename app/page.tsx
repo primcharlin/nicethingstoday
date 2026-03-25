@@ -112,26 +112,28 @@ export default function HomePage() {
 
     return (
         <>
-            <section aria-labelledby='home-heading'>
-                <header className='mb-5'>
+            <section
+                aria-labelledby='home-heading'
+                className='flex h-full min-h-0 flex-col'>
+                <header className='mb-3'>
                     <h1
                         id='home-heading'
                         className='headingtext'>
-                        <span className='heading-line'>
-                            <img
-                                src='/img/nicethings-logo-01.png'
-                                alt='NiceThingsToday logo'
-                                className='heading-logo'
-                            />
+                        <img
+                            src='/img/nicethings-logo-01.png'
+                            alt='NiceThingsToday logo'
+                            className='heading-logo'
+                        />
+                        <span className='heading-copy'>
                             Hi Beau,
+                            <br />
+                            what felt nice today?
                         </span>
-                        <br />
-                        what felt nice today?
                     </h1>
                 </header>
 
-                <div>
-                    <div className='flex flex-wrap justify-between gap-3'>
+                <div className='flex min-h-0 flex-1 flex-col gap-3'>
+                    <div className='flex flex-wrap justify-between gap-2'>
                         {chips.map((chip) => (
                             <Chip
                                 key={chip}
@@ -142,7 +144,7 @@ export default function HomePage() {
                         ))}
                     </div>
 
-                    <div className='mt-4'>
+                    <div className='mt-2'>
                         <label className='block text-xs sm:text-sm md:text-base font-bold text-white'>
                             Add your own....
                             <div className='mt-2 relative'>
@@ -158,7 +160,7 @@ export default function HomePage() {
                                             handleAddCustom();
                                         }
                                     }}
-                                    className='w-full rounded-[32px] border-0 bg-card px-4 py-4 text-sm text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background'
+                                    className='w-full rounded-[32px] border-0 bg-card px-4 py-2.5 text-sm text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background'
                                 />
                                 {customInput.length === 0 && (
                                     <div
@@ -181,14 +183,14 @@ export default function HomePage() {
                         </label>
                     </div>
 
-                    <div className='mt-6 flex justify-center'>
+                    <div className='mt-auto flex justify-center pt-1'>
                         <button
                             type='button'
                             onClick={handleKeepThis}
                             aria-label='Keep the selected nice moments for today'
                             disabled={!hasSelection}
                             className={[
-                                "inline-flex items-center justify-center rounded-full px-6 py-2.5 text-sm font-semibold transition",
+                                "inline-flex items-center justify-center rounded-full px-5 py-1.5 text-sm font-semibold transition",
                                 "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background",
                                 hasSelection
                                     ? "bg-card text-accent shadow-[0_6px_0_rgba(0,0,0,0.14)] hover:translate-y-[1px] hover:shadow-[0_5px_0_rgba(0,0,0,0.12)]"

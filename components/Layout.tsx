@@ -11,9 +11,9 @@ export function Layout({ children }: LayoutProps) {
         <div className='frame'>
             <GravityBackground />
             <div className='content'>
-                <main className='mt-6 sm:mt-10 flex-1'>{children}</main>
+                <main className='main-shell'>{children}</main>
 
-                <nav className='mt-4 flex justify-center gap-3 text-[11px] text-foreground/75'>
+                <nav className='mt-2 flex justify-center gap-3 text-[10px] text-foreground/75'>
                     <Link
                         href='/'
                         className='underline-offset-2 hover:underline'>

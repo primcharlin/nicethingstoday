@@ -56,40 +56,53 @@ export default function YearPage() {
 
     return (
         <>
-            <section aria-labelledby='year-heading'>
-                <header className='mb-4 flex items-center justify-between gap-3'>
+            <section
+                aria-labelledby='year-heading'
+                className='flex h-full min-h-0 flex-col'>
+                <header className='year-header'>
                     <h1
                         id='year-heading'
-                        className='heading-primary text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black tracking-tight'>
-                        Your year in little moments
+                        className='year-headingtext'>
+                        <img
+                            src='/img/nicethings-logo-01.png'
+                            alt='NiceThingsToday logo'
+                            className='heading-logo'
+                        />
+                        <span className='heading-copy year-heading-copy'>
+                            Hi Beau,
+                            <br />
+                            <span className='year-heading-nowrap'>
+                                your year of nice moments
+                            </span>
+                        </span>
                     </h1>
-                    <div className='flex items-center gap-1 rounded-full bg-card/80 px-2 py-1 shadow-sm text-xs sm:text-sm md:text-base'>
+                    <div className='year-picker'>
                         <button
                             type='button'
                             onClick={() => setYear((prev) => prev - 1)}
                             aria-label='View previous year'
-                            className='rounded-full px-2 py-1 text-xs text-foreground/70 hover:bg-black/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background'>
+                            className='year-picker-button'>
                             ←
                         </button>
-                        <span className='px-2 text-xs font-semibold text-foreground/80'>
-                            {year}
-                        </span>
+                        <span className='year-picker-year'>{year}</span>
                         <button
                             type='button'
                             onClick={() => setYear((prev) => prev + 1)}
                             aria-label='View next year'
-                            className='rounded-full px-2 py-1 text-xs text-foreground/70 hover:bg-black/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background'>
+                            className='year-picker-button'>
                             →
                         </button>
                     </div>
                 </header>
 
-                <DotGrid
-                    days={days}
-                    entries={entries}
-                    activeISO={activeISO}
-                    onDayClick={handleDayClick}
-                />
+                <div className='min-h-0 flex-1'>
+                    <DotGrid
+                        days={days}
+                        entries={entries}
+                        activeISO={activeISO}
+                        onDayClick={handleDayClick}
+                    />
+                </div>
             </section>
 
             <OverlayCard

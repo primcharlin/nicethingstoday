@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef } from "react";
+import { useEffect, useMemo, useRef, type CSSProperties } from "react";
 import Matter from "matter-js";
 
 type BodySpec = {
@@ -8,10 +8,19 @@ type BodySpec = {
   size: number;
   hue: number;
   label: string;
+  shapeStyle: CSSProperties;
 };
 
 function clamp(value: number, min: number, max: number) {
   return Math.max(min, Math.min(max, value));
+}
+
+function pickStableShapeIndex(key: string, poolLength: number) {
+  let hash = 0;
+  for (let i = 0; i < key.length; i += 1) {
+    hash = (hash * 31 + key.charCodeAt(i)) >>> 0;
+  }
+  return hash % poolLength;
 }
 
 export function GravityBackground() {
@@ -19,14 +28,29 @@ export function GravityBackground() {
   const itemRefs = useRef(new Map<string, HTMLDivElement>());
 
   const specs: BodySpec[] = useMemo(
-    () => [
-      { id: "a", size: 64, hue: 270, label: "soft" },
-      { id: "b", size: 56, hue: 25, label: "coffee" },
-      { id: "c", size: 72, hue: 145, label: "sun" },
-      { id: "d", size: 60, hue: 330, label: "kind" },
-      { id: "e", size: 52, hue: 205, label: "rest" },
-      { id: "f", size: 68, hue: 95, label: "music" },
-    ],
+    () => {
+      const base = [
+        { id: "a", size: 104, hue: 270, label: "soft" },
+        { id: "b", size: 92, hue: 25, label: "coffee" },
+        { id: "c", size: 116, hue: 145, label: "sun" },
+        { id: "d", size: 98, hue: 330, label: "kind" },
+        { id: "e", size: 88, hue: 205, label: "rest" },
+        { id: "f", size: 112, hue: 95, label: "music" },
+      ];
+
+      const shapePool: CSSProperties[] = [
+        { borderRadius: "999px" }, // circle
+        { borderRadius: "28% 72% 68% 32% / 30% 28% 72% 70%" }, // blob
+        { borderRadius: "20%" }, // rounded-square
+        { clipPath: "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)" }, // diamond
+        { clipPath: "polygon(50% 0%, 95% 30%, 78% 92%, 22% 92%, 5% 30%)" }, // pentagon
+      ];
+
+      return base.map((item) => ({
+        ...item,
+        shapeStyle: shapePool[pickStableShapeIndex(item.id, shapePool.length)],
+      }));
+    },
     [],
   );
 
@@ -170,7 +194,8 @@ export function GravityBackground() {
               width: `${spec.size}px`,
               height: `${spec.size}px`,
               background: `hsla(${spec.hue}, 90%, 70%, 0.55)`,
-            } as React.CSSProperties
+              ...spec.shapeStyle,
+            } as CSSProperties
           }
         >
           <span className="gravity-item-label">{spec.label}</span>
