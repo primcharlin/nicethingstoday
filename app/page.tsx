@@ -114,7 +114,7 @@ export default function HomePage() {
         <>
             <section
                 aria-labelledby='home-heading'
-                className='flex min-h-0 flex-col'>
+                className='time-page'>
                 <header className='mb-3'>
                     <h1
                         id='home-heading'
