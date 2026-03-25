@@ -149,10 +149,9 @@ input {
 }
 
 .year-picker-year {
-    font-weight: 700;
-    color: var(--foreground);
+    font-weight: 600; /* similar to font-semibold */
+    color: rgba(31, 41, 55, 0.8); /* text-foreground/80 */
     padding-inline: 0.3dvh;
-    min-width: 1.8ch;
     text-align: center;
 }
 
