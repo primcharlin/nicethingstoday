@@ -13,3 +13,11 @@
 [00:00:48.483] Server  ERROR   ⨯ InvariantError: Invariant: The client reference manifest for route "/year" does not exist. This is a bug in Next.js.
 [00:00:52.634] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
 [00:00:52.771] Browser ERROR   Can't perform a React state update on a component that hasn't mounted yet. This indicates that you have a side-effect in your render function that asynchronously tries to update the component. Move this work to useEffect instead.
+[00:03:12.773] Server  ERROR   ⨯ SyntaxError: Unexpected end of JSON input
+[00:03:12.848] Server  ERROR   ⨯ SyntaxError: Unexpected end of JSON input
+[00:03:12.890] Server  ERROR   ⨯ SyntaxError: Unexpected end of JSON input
+[00:03:16.330] Browser ERROR   uncaughtError: SyntaxError: Unexpected end of JSON input
+[00:03:16.556] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:03:16.844] Server  ERROR   ⨯ SyntaxError: Unexpected end of JSON input
+[00:03:16.947] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:03:20.122] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
