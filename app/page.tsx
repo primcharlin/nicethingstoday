@@ -116,8 +116,15 @@ export default function HomePage() {
                 <header className='mb-5'>
                     <h1
                         id='home-heading'
-                        className='heading-primary text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black tracking-tight'>
-                        Hi Beau,
+                        className='headingtext'>
+                        <span className='heading-line'>
+                            <img
+                                src='/img/nicethings-logo-01.png'
+                                alt='NiceThingsToday logo'
+                                className='heading-logo'
+                            />
+                            Hi Beau,
+                        </span>
                         <br />
                         what felt nice today?
                     </h1>

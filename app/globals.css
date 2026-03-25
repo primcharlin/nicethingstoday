@@ -20,7 +20,18 @@
 }
 
 body {
-    background: var(--background);
+    /* Put your exported v0 background image at public/img/bg-v0.png */
+    background-color: var(--background);
+    background-image:
+        linear-gradient(
+            rgba(250, 225, 98, 0.45),
+            rgba(250, 225, 98, 0.45)
+        ),
+        url("/img/bg-v0.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     color: var(--foreground);
     font-family:
         var(--font-inter),
@@ -43,26 +54,119 @@ input {
     color: var(--heading-primary);
 }
 
+.headingtext {
+    color: var(--heading-primary);
+    font-weight: 900; /* font-black */
+    letter-spacing: -0.025em; /* tracking-tight */
+
+    /* text-2xl */
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+
+.heading-line {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.heading-logo {
+    width: 1.5em;
+    height: 1.5em;
+    flex-shrink: 0;
+}
+
+@media (min-width: 640px) {
+    .headingtext {
+        /* sm:text-3xl */
+        font-size: 1.875rem;
+        line-height: 2.25rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .headingtext {
+        font-size: 2.25rem;
+        line-height: 2.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .headingtext {
+        font-size: 3rem;
+        line-height: 1;
+        font-weight: 900;
+    }
+}
+
 /* Centralized full-screen frame styling */
 .frame {
     min-height: 100vh;
-    background: var(--background);
+    background: transparent;
     color: var(--foreground);
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.gravity-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    user-select: none;
+}
+
+.gravity-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 999px;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+    backdrop-filter: blur(4px);
+    display: grid;
+    place-items: center;
+    cursor: grab;
+    pointer-events: auto;
+}
+
+.gravity-item:active {
+    cursor: grabbing;
+}
+
+.gravity-item-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: rgba(31, 41, 55, 0.8);
+    letter-spacing: -0.01em;
+    text-transform: lowercase;
 }
 
 /* Centralized logo sizing */
 .logo {
-    width: 10rem;
-    height: 10rem;
+    width: 5rem; 
+    height: 5rem;
     flex-shrink: 0;
+}
+
+/* Centralized top-left logo/link header */
+.logo-container {
+    position: absolute;
+    left: 1rem; /* left-4 */
+    top: 1rem; /* top-4 */
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* gap-2 */
+    font-size: 10px; /* text-[10px] */
+    color: rgba(31, 41, 55, 0.7); /* text-foreground/70 */
+    z-index: 10;
 }
 
 /* Centralized layout container sizing/padding */
 .content {
     position: relative;
+    z-index: 1;
     display: flex;
     flex-direction: column;
     width: 100%;
