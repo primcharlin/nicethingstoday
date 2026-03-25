@@ -305,8 +305,8 @@ input {
 }
 
 .main-shell {
-    margin-top: 2dvh;
-    flex: 1;
+    margin-top: 0;
+    flex: 0 0 auto;
     min-height: 0;
     overflow: hidden;
 }

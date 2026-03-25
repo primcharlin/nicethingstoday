@@ -58,7 +58,7 @@ export default function YearPage() {
         <>
             <section
                 aria-labelledby='year-heading'
-                className='flex h-full min-h-0 flex-col'>
+                className='flex min-h-0 flex-col'>
                 <header className='year-header'>
                     <h1
                         id='year-heading'
