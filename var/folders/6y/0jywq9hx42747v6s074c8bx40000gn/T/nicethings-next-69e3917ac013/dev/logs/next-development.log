@@ -1,23 +1,19 @@
-[00:00:01.201] Server  LOG     
-[00:00:01.201] Server  LOG       We detected TypeScript in your project and reconfigured your tsconfig.json file for you.
-[00:00:01.201] Server  LOG       The following suggested values were added to your tsconfig.json. These values can be changed to fit your project's needs:
-
-[00:00:01.201] Server  LOG       	- include was updated to add '/var/folders/6y/0jywq9hx42747v6s074c8bx40000gn/T/nicethings-next-69e3917ac013/types/**/*.ts'
-[00:00:01.201] Server  LOG       	- include was updated to add '/var/folders/6y/0jywq9hx42747v6s074c8bx40000gn/T/nicethings-next-69e3917ac013/dev/types/**/*.ts'
-[00:00:01.201] Server  LOG     
-[00:00:01.320] Server  LOG     ✓ Ready in 1085ms
-[00:00:08.912] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:41.594] Server  ERROR   ⨯ SyntaxError: Unexpected end of JSON input
-[00:00:45.665] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:48.196] Server  ERROR   ⨯ InvariantError: Invariant: The client reference manifest for route "/year" does not exist. This is a bug in Next.js.
-[00:00:48.483] Server  ERROR   ⨯ InvariantError: Invariant: The client reference manifest for route "/year" does not exist. This is a bug in Next.js.
-[00:00:52.634] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:52.771] Browser ERROR   Can't perform a React state update on a component that hasn't mounted yet. This indicates that you have a side-effect in your render function that asynchronously tries to update the component. Move this work to useEffect instead.
-[00:03:12.773] Server  ERROR   ⨯ SyntaxError: Unexpected end of JSON input
-[00:03:12.848] Server  ERROR   ⨯ SyntaxError: Unexpected end of JSON input
-[00:03:12.890] Server  ERROR   ⨯ SyntaxError: Unexpected end of JSON input
-[00:03:16.330] Browser ERROR   uncaughtError: SyntaxError: Unexpected end of JSON input
-[00:03:16.556] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:03:16.844] Server  ERROR   ⨯ SyntaxError: Unexpected end of JSON input
-[00:03:16.947] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:03:20.122] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:35.211] Server  LOG     ✓ Ready in 94.9s
+[00:04:39.939] Server  LOG     ○ Compiling / ...
+[00:10:00.838] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:10:02.383] Server  LOG     ○ Compiling /_not-found ...
+[00:10:03.510] Browser ERROR   Can't perform a React state update on a component that hasn't mounted yet. This indicates that you have a side-effect in your render function that asynchronously tries to update the component. Move this work to useEffect instead.
+[00:10:28.385] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:10:30.279] Server  ERROR   ⨯ InvariantError: Invariant: The client reference manifest for route "/year" does not exist. This is a bug in Next.js.
+[00:10:30.654] Server  ERROR   ⨯ InvariantError: Invariant: The client reference manifest for route "/year" does not exist. This is a bug in Next.js.
+[00:10:31.506] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:10:34.320] Server  LOG     ○ Compiling /_error ...
+[00:10:53.883] Browser ERROR   Can't perform a React state update on a component that hasn't mounted yet. This indicates that you have a side-effect in your render function that asynchronously tries to update the component. Move this work to useEffect instead.
+[00:10:55.204] Server  ERROR   ⨯ SyntaxError: Unexpected end of JSON input
+[00:11:02.909] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:11:03.198] Browser ERROR   Can't perform a React state update on a component that hasn't mounted yet. This indicates that you have a side-effect in your render function that asynchronously tries to update the component. Move this work to useEffect instead.
+[00:13:03.475] Browser ERROR   uncaughtError: ChunkLoadError: Loading chunk app/layout failed.
+(timeout: http://localhost:3000/_next/static/chunks/app/layout.js)
+[00:13:04.276] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:13:09.408] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:15:32.673] Server  LOG     ○ Compiling /year ...
